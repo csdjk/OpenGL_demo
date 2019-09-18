@@ -5,10 +5,9 @@
 
 int main() {
 
-	textures t;
+	transform t;
 	t.start();
 	
-	transform t2;
-	t2.start();
+	
 	return 0;
 }
