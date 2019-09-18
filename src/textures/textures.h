@@ -1,9 +1,8 @@
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
 #include <iostream>
-#define STB_IMAGE_IMPLEMENTATION
-#include <../src/stb_image.h>
-#include "../Shader.h"
+#include <stb_image.h>
+#include <learnopengl/shader.h>
 
 class textures
 {
@@ -29,7 +28,7 @@ public:
         int width, height, nrChannels;
         stbi_set_flip_vertically_on_load(true); // tell stb_image.h to flip loaded texture's on the y-axis.
         // The FileSystem::getPath(...) is part of the GitHub repository so we can find files on any IDE/platform; replace it with your own image path.
-        unsigned char *data = stbi_load("resources/textures/wall.jpg", &width, &height, &nrChannels, 0);
+        unsigned char *data = stbi_load("resources/textures/container.jpg", &width, &height, &nrChannels, 0);
         if (data)
         {
             glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
@@ -39,7 +38,6 @@ public:
         {
             std::cout << "Failed to load texture" << std::endl;
         }
-        stbi_image_free(data);
         // texture 2
         glGenTextures(1, &texture2);
         glBindTexture(GL_TEXTURE_2D, texture2);
@@ -63,7 +61,7 @@ public:
         }
         stbi_image_free(data);
 
-        ourShader.setInt("texture1", 0);
+		ourShader.setInt("texture1", 0);
         ourShader.setInt("texture2", 1);
         //glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 
@@ -71,7 +69,7 @@ public:
         while (!glfwWindowShouldClose(window))
         {
 
-            glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
+            glClearColor(0.0f, 0.3f, 0.3f, 1.0f);
             glClear(GL_COLOR_BUFFER_BIT);
             // bind textures on corresponding texture units
             glActiveTexture(GL_TEXTURE0);

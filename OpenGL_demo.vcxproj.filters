@@ -19,6 +19,9 @@
     <Filter Include="头文件\triangle">
       <UniqueIdentifier>{024b1022-a0d5-4442-86f6-714a8483cf5f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="头文件\transform">
+      <UniqueIdentifier>{413666db-44de-445d-aa3d-b9cefcab5839}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\glad.c">
@@ -27,22 +30,19 @@
     <ClCompile Include="main.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="src\triangle\triangle.cpp">
+    <ClCompile Include="src\stb_image.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\stb_image.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="src\shader.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="src\triangle\triangle.h">
       <Filter>头文件\triangle</Filter>
     </ClInclude>
     <ClInclude Include="src\textures\textures.h">
       <Filter>头文件\textures</Filter>
+    </ClInclude>
+    <ClInclude Include="src\transform\transform.h">
+      <Filter>头文件\transform</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

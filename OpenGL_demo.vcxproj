@@ -21,12 +21,11 @@
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="src\glad.c" />
-    <ClCompile Include="src\triangle\triangle.cpp" />
+    <ClCompile Include="src\stb_image.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\shader.h" />
-    <ClInclude Include="src\stb_image.h" />
     <ClInclude Include="src\textures\textures.h" />
+    <ClInclude Include="src\transform\transform.h" />
     <ClInclude Include="src\triangle\triangle.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
