@@ -65,6 +65,7 @@ public:
 		}
 		stbi_image_free(data);
 
+		ourShader.use();
 		ourShader.setInt("texture1", 0);
 		ourShader.setInt("texture2", 1);
 		//glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
@@ -81,18 +82,25 @@ public:
 			glActiveTexture(GL_TEXTURE1);
 			glBindTexture(GL_TEXTURE_2D, texture2);
 			// create transformations
-			// glm::mat4 transform = glm::mat4(1.0f); // make sure to initialize matrix to identity matrix first
-			// transform = glm::translate(transform, glm::vec3(0.5f, -0.5f, 0.0f));
-			// transform = glm::rotate(transform, (float)glfwGetTime(), glm::vec3(0.0f, 0.0f, 1.0f));
-			glm::mat4 transform;
-			transform = glm::rotate(transform, glm::radians(90.0f), glm::vec3(0.0, 0.0, 1.0));
-			transform = glm::scale(transform, glm::vec3(0.5, 0.5, 0.5));
-
-			ourShader.use();
+			glm::mat4 transform = glm::mat4(1.0f); // make sure to initialize matrix to identity matrix first
+			// first container
+			transform = glm::translate(transform, glm::vec3(0.5f, -0.5f, 0.0f));
+			transform = glm::rotate(transform, (float)glfwGetTime(), glm::vec3(0.0f, 0.0f, 1.0f));
 			unsigned int transformLoc = glGetUniformLocation(ourShader.ID, "transform");
 			glUniformMatrix4fv(transformLoc, 1, GL_FALSE, glm::value_ptr(transform));
-
 			glBindVertexArray(VAO);
+			glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+			// second transformation
+			// ---------------------
+			transform = glm::mat4(1.0f); // reset it to identity matrix
+			transform = glm::translate(transform, glm::vec3(-0.5f, 0.5f, 0.0f));
+			float scaleAmount = cos(glfwGetTime());
+			std::cout<<scaleAmount<<std::endl;
+			std::cout<<glfwGetTime()<<std::endl;
+
+			transform = glm::scale(transform, glm::vec3(scaleAmount, scaleAmount, scaleAmount));
+			glUniformMatrix4fv(transformLoc, 1, GL_FALSE, &transform[0][0]); // this time take the matrix value array's first element as its memory pointer value
+			// now with the uniform matrix being replaced with new transformations, draw it again.
 			glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
 
 			glfwSwapBuffers(window);
@@ -117,11 +125,11 @@ private:
 	// set up vertex data (and buffer(s)) and configure vertex attributes
 	// ------------------------------------------------------------------
 	float vertices[32] = {
-		  // positions          // texture coords
-         0.5f,  0.5f, 0.0f,   1.0f, 1.0f, // top right
-         0.5f, -0.5f, 0.0f,   1.0f, 0.0f, // bottom right
-        -0.5f, -0.5f, 0.0f,   0.0f, 0.0f, // bottom left
-        -0.5f,  0.5f, 0.0f,   0.0f, 1.0f  // top left 
+		// positions          // texture coords
+		0.5f, 0.5f, 0.0f, 1.0f, 1.0f,   // top right
+		0.5f, -0.5f, 0.0f, 1.0f, 0.0f,  // bottom right
+		-0.5f, -0.5f, 0.0f, 0.0f, 0.0f, // bottom left
+		-0.5f, 0.5f, 0.0f, 0.0f, 1.0f   // top left
 	};
 	unsigned int indices[6] = {
 		0, 1, 3, // first triangle
@@ -173,11 +181,11 @@ private:
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
 		glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
 
-		 // position attribute
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)0);
-    glEnableVertexAttribArray(0);
-    // texture coord attribute
-    glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)(3 * sizeof(float)));
-    glEnableVertexAttribArray(1);
+		// position attribute
+		glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void *)0);
+		glEnableVertexAttribArray(0);
+		// texture coord attribute
+		glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void *)(3 * sizeof(float)));
+		glEnableVertexAttribArray(1);
 	};
 };

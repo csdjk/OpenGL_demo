@@ -22,6 +22,9 @@
     <Filter Include="头文件\transform">
       <UniqueIdentifier>{413666db-44de-445d-aa3d-b9cefcab5839}</UniqueIdentifier>
     </Filter>
+    <Filter Include="头文件\coordinate">
+      <UniqueIdentifier>{8b9336ea-2444-485c-b391-8f81df580206}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\glad.c">
@@ -43,6 +46,9 @@
     </ClInclude>
     <ClInclude Include="src\transform\transform.h">
       <Filter>头文件\transform</Filter>
+    </ClInclude>
+    <ClInclude Include="src\coordinate_systems\coordinate.h">
+      <Filter>头文件\coordinate</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

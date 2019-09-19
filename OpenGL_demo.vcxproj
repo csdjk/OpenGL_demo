@@ -24,6 +24,7 @@
     <ClCompile Include="src\stb_image.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\coordinate_systems\coordinate.h" />
     <ClInclude Include="src\textures\textures.h" />
     <ClInclude Include="src\transform\transform.h" />
     <ClInclude Include="src\triangle\triangle.h" />
