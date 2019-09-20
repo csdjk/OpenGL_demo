@@ -9,14 +9,14 @@
 
 #include <iostream>
 #include <learnopengl/shader.h>
-class coordinate_systems_depth
+class camera_circle
 {
 public:
 	int start()
 	{
 		init();
 		VAOSet();
-		Shader ourShader("src/coordinate_systems_depth/shader.vs", "src/coordinate_systems_depth/shader.fs");
+		Shader ourShader("src/camera_circle/shader.vs", "src/camera_circle/shader.fs");
 		// load and create a texture
 		unsigned int texture1, texture2;
 		// texture 1
@@ -83,10 +83,15 @@ public:
 
 			ourShader.use();
 			// create transformations
-			glm::mat4 view = glm::mat4(1.0f);
+			// glm::mat4 view = glm::mat4(1.0f);
 			glm::mat4 projection = glm::mat4(1.0f);
 			// model = glm::rotate(model, glm::radians(-55.0f), glm::vec3(1.0f, 0.0f, 0.0f));
-			view = glm::translate(view, glm::vec3(0.0f, 0.0f, -3.0f));
+			// view = glm::translate(view, glm::vec3(0.0f, 0.0f, -3.0f));
+			float radius = 10.0f;
+			float camX = sin(glfwGetTime()) * radius;
+			float camZ = cos(glfwGetTime()) * radius;
+			glm::mat4 view;
+			view = glm::lookAt(glm::vec3(camX, 0.0, camZ), glm::vec3(0.0, 0.0, 0.0), glm::vec3(0.0, 1.0, 0.0));
 			projection = glm::perspective(glm::radians(80.0f), (float)SCR_WIDTH / (float)SCR_HEIGHT, num, 100.0f);
 			// pass transformation matrices to the shader
 			ourShader.setMat4("projection", projection); // note: currently we set the projection matrix each frame, but since the projection matrix rarely changes it's often best practice to set it outside the main loop only once.
@@ -97,7 +102,7 @@ public:
 				glm::mat4 model;
 				model = glm::translate(model, cubePositions[i]);
 				float angle = 20.0f * i;
-				if(i % 3 == 0)  // every 3rd iteration (including the first) we set the angle using GLFW's time function.
+				if (i % 3 == 0) // every 3rd iteration (including the first) we set the angle using GLFW's time function.
 					angle = glfwGetTime() * 25.0f;
 				model = glm::rotate(model, glm::radians(angle), glm::vec3(1.0f, 0.3f, 0.5f));
 				ourShader.setMat4("model", model);
@@ -242,12 +247,12 @@ private:
 
 		if (glfwGetKey(window, GLFW_KEY_UP) == GLFW_PRESS)
 		{
-			std::cout<< num <<std::endl;
+			std::cout << num << std::endl;
 			num += 0.1f; // change this value accordingly (might be too slow or too fast based on system hardware)
 		}
 		if (glfwGetKey(window, GLFW_KEY_DOWN) == GLFW_PRESS)
 		{
-			std::cout << num <<std::endl;
+			std::cout << num << std::endl;
 			num -= 0.1f; // change this value accordingly (might be too slow or too fast based on system hardware)
 		}
 	}

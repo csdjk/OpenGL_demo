@@ -5,11 +5,12 @@
 #include "src/coordinate_systems/coordinate.h"
 
 #include "src/coordinate_systems_depth/coordinate_systems_depth.h"
+#include "src/camera_circle/camera_circle.h"
 
 
 int main() {
 
-	coordinate_systems_depth obj;
+	camera_circle obj;
 	obj.start();
 	
 	
