@@ -25,6 +25,9 @@
     <Filter Include="头文件\coordinate">
       <UniqueIdentifier>{8b9336ea-2444-485c-b391-8f81df580206}</UniqueIdentifier>
     </Filter>
+    <Filter Include="头文件\coordinate_systems_depth">
+      <UniqueIdentifier>{f515bfa7-f759-4cc7-9ea1-74e37e0136cc}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\glad.c">
@@ -49,6 +52,9 @@
     </ClInclude>
     <ClInclude Include="src\coordinate_systems\coordinate.h">
       <Filter>头文件\coordinate</Filter>
+    </ClInclude>
+    <ClInclude Include="src\coordinate_systems_depth\coordinate.h">
+      <Filter>头文件\coordinate_systems_depth</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
