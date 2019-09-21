@@ -1,0 +1,7 @@
+PropertySheet.props
+
+
+.vs/
+.vscode/
+x64/
+Debug/
