@@ -1,9 +1,14 @@
-﻿  main.cpp
-E:\OpenGL\OpenGL_demo\src\transform\transform.h(97,22): warning C4244:  “初始化”: 从“double”转换到“float”，可能丢失数据
-E:\OpenGL\OpenGL_demo\src\coordinate_systems_depth\coordinate_systems_depth.h(101,28): warning C4244:  “=”: 从“double”转换到“float”，可能丢失数据
-E:\OpenGL\OpenGL_demo\src\camera_circle\camera_circle.h(1,1): warning C4819:  该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
-E:\OpenGL\OpenGL_demo\src\camera_circle\camera_circle.h(77,23): warning C4244:  “初始化”: 从“double”转换到“float”，可能丢失数据
-E:\OpenGL\OpenGL_demo\src\camera_circle\camera_circle.h(97,15): warning C4244:  “初始化”: 从“double”转换到“float”，可能丢失数据
-E:\OpenGL\OpenGL_demo\src\camera_circle\camera_circle.h(98,15): warning C4244:  “初始化”: 从“double”转换到“float”，可能丢失数据
-E:\OpenGL\OpenGL_demo\src\camera_circle\camera_circle.h(113,28): warning C4244:  “=”: 从“double”转换到“float”，可能丢失数据
+﻿E:\OpenGL\OpenGL_demo\OpenGL_demo.vcxproj(83,5): warning MSB4011: 无法再次导入“E:\OpenGL\OpenGL_demo\PropertySheet.props”。可能已在“E:\OpenGL\OpenGL_demo\OpenGL_demo.vcxproj (82,5)”处导入过它。这很可能是生成创作错误。将忽略此后续导入。
+  main.cpp
+E:\OpenGL\OpenGL_demo\src\camera_mouse_zoom\camera_mouse_zoom.h(92,11): warning C4244:  “=”: 从“double”转换到“float”，可能丢失数据
+E:\OpenGL\OpenGL_demo\src\camera_mouse_zoom\camera_mouse_zoom.h(93,11): warning C4244:  “=”: 从“double”转换到“float”，可能丢失数据
+E:\OpenGL\OpenGL_demo\src\camera_mouse_zoom\camera_mouse_zoom.h(98,16): warning C4244:  “初始化”: 从“double”转换到“float”，可能丢失数据
+E:\OpenGL\OpenGL_demo\src\camera_mouse_zoom\camera_mouse_zoom.h(99,16): warning C4244:  “初始化”: 从“double”转换到“float”，可能丢失数据
+E:\OpenGL\OpenGL_demo\src\camera_mouse_zoom\camera_mouse_zoom.h(100,10): warning C4244:  “=”: 从“double”转换到“float”，可能丢失数据
+E:\OpenGL\OpenGL_demo\src\camera_mouse_zoom\camera_mouse_zoom.h(101,10): warning C4244:  “=”: 从“double”转换到“float”，可能丢失数据
+E:\OpenGL\OpenGL_demo\src\camera_mouse_zoom\camera_mouse_zoom.h(108,28): warning C4244:  “参数”: 从“double”转换到“float”，可能丢失数据
+E:\OpenGL\OpenGL_demo\src\camera_mouse_zoom\camera_mouse_zoom.h(131,9): warning C4101:  “xpos”: 未引用的局部变量
+E:\OpenGL\OpenGL_demo\src\camera_mouse_zoom\camera_mouse_zoom.h(131,15): warning C4101:  “ypos”: 未引用的局部变量
+E:\OpenGL\OpenGL_demo\src\camera_mouse_zoom\camera_mouse_zoom.h(242,22): warning C4244:  “初始化”: 从“double”转换到“float”，可能丢失数据
+E:\OpenGL\OpenGL_demo\src\camera_mouse_zoom\camera_mouse_zoom.h(276,27): warning C4244:  “=”: 从“double”转换到“float”，可能丢失数据
   OpenGL_demo.vcxproj -> E:\OpenGL\OpenGL_demo\x64\Debug\OpenGL_demo.exe
