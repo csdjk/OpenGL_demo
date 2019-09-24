@@ -1,6 +1,6 @@
 #include <iostream>
 
-#include "src/camera_mouse_zoom/camera_mouse_zoom.h"
+#include "src/lighting/baseLighting/baseLighting.cpp"
 
 
 int main() {
